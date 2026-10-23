@@ -1,6 +1,5 @@
 name: Python FastAPI Currency ETL CI
 
-# Пайплайн будет запускаться автоматически при каждом пуше в ветку main
 on:
   push:
     branches: [ main ]
@@ -17,6 +16,7 @@ jobs:
       uses: actions/checkout@v4
 
     # 2. Устанавливаем чистый Python
+    - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
@@ -27,7 +27,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
 
-    # 4. Запускаем pytest (точно так же, как вы делали на компьютере)
+    # 4. Запускаем pytest
     - name: Run automated tests
       run: |
         python -m pytest
