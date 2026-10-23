@@ -1,54 +1,32 @@
-# FastAPI: реализуем приложение вместе
+# Валютный ETL и Data Quality Сервис
 
-Главный учебный файл — `app.py`. В нём оставлены четыре небольших задания.
-`app_final.py` — готовый вариант для преподавателя и проверки.
+Микросервис на FastAPI, который симулирует ETL-процесс: принимает курсы валют от внешних источников, проверяет их на аномалии (Data Quality) и сохраняет в витрину данных.
 
-## Подготовка
+## Стек технологий
+* Python 3.11+
+* FastAPI & Uvicorn
+* Pydantic
+* Pytest & HTTPX
 
+## Как запустить проект локально
+
+1. Активируйте виртуальное окружение:
+   ```bash
+   source venv/bin/activate
+   ```
+
+2. Установите зависимости:
+   ```bash
+   python -m pip install -r requirements.txt
+   ```
+
+3. Запустите сервер:
+   ```bash
+   uvicorn main:app --reload
+   ```
+   После этого сервис будет доступен по адресу: http://127.0.0.1:8000
+
+## Как запустить автоматические тесты
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
+python -m pytest
 ```
-
-## Запуск
-
-```bash
-python -m uvicorn app:app --reload
-```
-
-После запуска:
-
-- приложение: http://127.0.0.1:8000
-- документация: http://127.0.0.1:8000/docs
-
-## Проверка по мере реализации
-
-```bash
-curl http://127.0.0.1:8000/
-curl http://127.0.0.1:8000/health
-curl "http://127.0.0.1:8000/hello?name=Anna"
-```
-
-Перед последним шагом задайте настройки и перезапустите сервер:
-
-```bash
-export APP_NAME="Проект группы 1"
-export APP_AUTHOR="Иван Иванов"
-python -m uvicorn app:app --reload
-```
-
-Проверка:
-
-```bash
-curl http://127.0.0.1:8000/info
-```
-
-## Если нужно быстро восстановить правильный вариант
-
-```bash
-cp app_final.py app.py
-```
-
-Промежуточные работающие версии находятся в папке `examples`.
-
