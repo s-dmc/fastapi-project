@@ -51,12 +51,12 @@
 curl http://127.0.0.1:8000/health # {"status":"ok"}
 curl http://127.0.0.1:8000/version # {"version":"1.0.0"}
 ```
-Логи выводятся в терминал, где запущен сервер; сообщения приложения помечены linkspace.
+Логи выводятся в терминал, где запущен сервер:
 
 ```bash
-INFO linkspace: Application started: version=1.0.0, data_dir=data
-INFO linkspace: Link created: id=2, collection_id=2
-WARNING linkspace: Duplicate link: existing_id=2
+INFO: Application started: version=1.0.0, data_dir=data
+INFO: Link created: id=2, collection_id=2
+WARNING: Duplicate link: existing_id=2
 ```
 
 Для добавления нового курса валюты откройте интерактивную документацию по адресу http://127.0.0.1:8000/docs, заполните название валюты и её текущий курс в эндпоинте POST /etl/load-rate. В ответ придет статус об успешном сохранении в витрину данных.
