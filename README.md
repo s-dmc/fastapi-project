@@ -20,7 +20,7 @@
 | **DELETE** | `/dwh/rates/{currency_code}` | Удаление валюты из витрины данных. | Если валюта найдена — удаляет её, иначе возвращает ошибку `404 Not Found`. |
 
 
-**Пример тела запроса для POST /etl/load-rate:**
+Пример тела запроса для POST /etl/load-rate:
 ```json
 {
   "currency": "USD",
