@@ -2,11 +2,11 @@
 
 Микросервис на FastAPI, который симулирует ETL-процесс: принимает курсы валют от внешних источников, проверяет их на аномалии (Data Quality) и сохраняет в готовую витрину данных.
 
-## Что понадобится
-* Python 3.11+
-* FastAPI & Uvicorn
-* Pydantic
-* Pytest & HTTPX
+## Стек
+
+* **Backend:** Python, FastAPI, Pydantic
+* **Тесты:** pytest, httpx
+* **CI:** GitHub Actions
 
 ## Список маршрутов API (EndPoints)
 
